@@ -3,12 +3,14 @@ import { Link } from 'react-router-dom'
 
 const Header = () => {
   return (
-    <div>
+    <div
+      style={{ display: 'flex', justifyContent: 'space-between', padding: 20 }}
+    >
       <div>
         <Link to="/">Home page</Link>
       </div>
       <div>
-        <Link to="/bookmarls">Bookmarks page (Favorites)</Link>
+        <Link to="/bookmarks">Bookmarks page (Favorites)</Link>
       </div>
     </div>
   )
