@@ -58,7 +58,7 @@ export default () => {
         />
       </Route>
       <Route path="/bookmarks" exact>
-        <Bookmarks />
+        <Bookmarks allItems={sneakers} unmarkItem={updateChoice} />
       </Route>
     </React.Fragment>
   )

@@ -5,7 +5,8 @@ const Home = props => {
   const { isLoading, sneakers, cartItems, updateChoice, unmarkItem } = props
   return (
     <React.Fragment>
-      <p>All Sneakers</p>
+      <h1>Home Page</h1>
+      <p style={{ textAlign: 'center' }}>All Sneakers</p>
       {isLoading ? (
         'Loading...'
       ) : (
