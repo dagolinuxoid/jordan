@@ -1,4 +1,4 @@
-// App react component | change the line to test sync in codeSandbox
+// App react component | change the line to test sync in codeSandbox | directly from github
 import React from 'react'
 import api from './api/contacts'
 import Cart from './components/Cart'
