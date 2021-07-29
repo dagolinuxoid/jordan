@@ -1,4 +1,4 @@
-// App react component
+// App react component | change the line to test sync in codeSandbox
 import React from 'react'
 import api from './api/contacts'
 import Cart from './components/Cart'
