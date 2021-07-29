@@ -1,7 +1,10 @@
 // App react component | change the line to test sync in codeSandbox | directly from github
 import React from 'react'
 import api from './api/contacts'
-import Cart from './components/Cart'
+import { Route } from 'react-router-dom'
+import Home from './pages/Home'
+import Bookmarks from './pages/Bookmarks'
+import Header from './components/Header'
 
 export default () => {
   const [sneakers, setSneakers] = React.useState([])
@@ -43,37 +46,20 @@ export default () => {
   }
 
   return (
-    <>
-      <p>All Sneakers</p>
-      {isLoading ? (
-        'Loading...'
-      ) : (
-        <ul style={{ listStyle: 'none' }}>
-          {sneakers.map(item => {
-            const { id, title, price, selected, liked } = item
-            return (
-              <li style={{ border: '1px solid', marginBottom: 5 }} key={id}>
-                <div>
-                  <p>
-                    {id} {title}
-                  </p>
-                  <span>{price}</span>
-                  <button onClick={() => updateChoice(id, 'selected')}>
-                    {selected ? '-' : '+'}
-                  </button>
-                  <input
-                    style={{ marginLeft: 5 }}
-                    type="checkbox"
-                    checked={liked}
-                    onChange={() => updateChoice(id, 'liked')}
-                  />
-                </div>
-              </li>
-            )
-          })}
-        </ul>
-      )}
-      <Cart items={cartItems} removeSelectionById={unmarkItem} />
-    </>
+    <React.Fragment>
+      <Header />
+      <Route path="/" exact>
+        <Home
+          sneakers={sneakers}
+          cartItems={cartItems}
+          isLoading={isLoading}
+          updateChoice={updateChoice}
+          unmarkItem={unmarkItem}
+        />
+      </Route>
+      <Route path="/bookmarks" exact>
+        <Bookmarks />
+      </Route>
+    </React.Fragment>
   )
 }
