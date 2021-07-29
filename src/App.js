@@ -6,7 +6,12 @@ import Cart from './components/Cart'
 export default () => {
   const [sneakers, setSneakers] = React.useState([])
   const [isLoading, setIsLoading] = React.useState(true)
-  const cartItems = sneakers.filter(item => item.selected)
+  const [cartItems, setCartItems] = React.useState([])
+
+  React.useEffect(
+    () => setCartItems(sneakers.filter(item => item.selected)),
+    [sneakers]
+  )
 
   React.useEffect(function getSneakersEffect() {
     api.get('items').then(({ data }) => {
