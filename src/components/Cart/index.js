@@ -14,7 +14,7 @@ function Cart(props) {
 
   return (
     <div>
-      <h2 style={{ textAlign: 'center' }}>Heading of a caRT element</h2>
+      <h2>Heading of a caRT element</h2>
       <ul>
         <ItemsInBag />
       </ul>

@@ -1,10 +1,12 @@
-// App react component | change the line to test sync in codeSandbox | directly from github
 import React from 'react'
-import api from './api/contacts'
 import { Route } from 'react-router-dom'
-import Home from './pages/Home'
-import Bookmarks from './pages/Bookmarks'
-import Header from './components/Header'
+
+import api from 'api/contacts'
+
+import Home from 'pages/Home'
+import Bookmarks from 'pages/Bookmarks'
+
+import Header from 'components/Header'
 
 export default () => {
   const [sneakers, setSneakers] = React.useState([])

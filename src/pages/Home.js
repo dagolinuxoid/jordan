@@ -1,20 +1,20 @@
 import React from 'react'
-import Cart from '../components/Cart'
+import Cart from 'components/Cart'
 
 const Home = props => {
   const { isLoading, sneakers, cartItems, updateChoice, unmarkItem } = props
   return (
     <React.Fragment>
       <h1>Home Page</h1>
-      <p style={{ textAlign: 'center' }}>All Sneakers</p>
+      <p>All Sneakers</p>
       {isLoading ? (
         'Loading...'
       ) : (
-        <ul style={{ listStyle: 'none' }}>
+        <ul>
           {sneakers.map(item => {
             const { id, title, price, selected, liked } = item
             return (
-              <li style={{ border: '1px solid', marginBottom: 5 }} key={id}>
+              <li>
                 <div>
                   <p>
                     {id} {title}
@@ -24,7 +24,6 @@ const Home = props => {
                     {selected ? '-' : '+'}
                   </button>
                   <input
-                    style={{ marginLeft: 5 }}
                     type="checkbox"
                     checked={liked}
                     onChange={() => updateChoice(id, 'liked')}

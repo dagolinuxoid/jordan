@@ -3,9 +3,7 @@ import { Link } from 'react-router-dom'
 
 const Header = () => {
   return (
-    <div
-      style={{ display: 'flex', justifyContent: 'space-between', padding: 20 }}
-    >
+    <div>
       <div>
         <Link to="/">Home page</Link>
       </div>
