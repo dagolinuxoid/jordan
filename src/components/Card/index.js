@@ -1,8 +1,8 @@
 import Button from 'components/Button'
 
-import product_image from 'assets/sneakers/1.jpg'
+import product_image from 'assets/sneakers/1.jpeg'
 
-import style from 'components/Card/Card.module.scss'
+import s from 'components/Card/Card.module.scss'
 
 // import { ReactComponent as CartIcon } from 'assets/liked.svg'
 
@@ -42,17 +42,14 @@ import style from 'components/Card/Card.module.scss'
 
 const Card = ({ title, price }) => {
   return (
-    <li className={style.card}>
-      <img src={product_image} alt="product" className={style.picture} />
-      <div className={style.info}>
-        <div className={style.titlePrice}>
-          <h3>{title}</h3>
-          <b>{price} USD</b>
+    <li className={s.card}>
+      <img src={product_image} alt="Sneakers" className={s.pic} />
+      <div className={s.overlay}>
+        <div className={s.info}>
+          <div>{title}</div>
+          <div>${price}</div>
         </div>
-        <div className={style.actions}>
-          <Button>Add to bag</Button>
-          <Button>Add to favorites</Button>
-        </div>
+        <div className={s.actions}>add/remove and like/unlike</div>
       </div>
     </li>
   )

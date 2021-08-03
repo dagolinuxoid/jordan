@@ -3,7 +3,7 @@ import React from 'react'
 // import Cart from 'components/Cart'
 import Card from 'components/Card'
 
-import styles from 'pages/Home/Home.module.scss'
+import s from 'pages/Home/Home.module.scss'
 
 const Home = props => {
   const { isLoading, sneakers, cartItems, updateChoice, unmarkItem } = props
@@ -14,7 +14,7 @@ const Home = props => {
       {isLoading ? (
         'Loading...'
       ) : (
-        <ul className={styles.products}>
+        <ul className={s.products}>
           {sneakers.map(item => {
             const { id, title, price, selected, liked } = item
             return (

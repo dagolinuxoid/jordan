@@ -1,38 +1,36 @@
 .card {
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  overflow-y: hidden;
-  padding: 0 8px 10px;
-  &:hover .info,
-  &:hover .titlePrice {
+  display: block;
+  overflow: hidden;
+  &:hover .overlay,
+  &:hover .info {
     transform: translatey(0);
   }
+  border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-.picture {
+.pic {
+  display: block;
   width: 100%;
   height: auto;
 }
 
-.info {
+.overlay {
   transform: translatey(100%);
   transition: transform 0.3s;
+  padding: 0 10px;
 }
 
-.titlePrice {
+.info {
   transform: translatey(-100%);
   transition: transform 0.3s;
-  text-align: center;
-  margin-bottom: 5px;
-  h3 {
-    font-weight: 400;
-  }
-  b {
-    font-weight: 900;
-    font-size: 16px;
+  font-size: 16px;
+  padding: 10px 0;
+  div ~ div {
+    margin-top: 5px;
+    font-weight: 600;
   }
 }
 
 .actions {
   display: flex;
-  justify-content: space-between;
 }
