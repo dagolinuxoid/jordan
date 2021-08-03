@@ -1,7 +1,7 @@
 import React from 'react'
 
 // import Cart from 'components/Cart'
-import Product from 'components/Product'
+import Card from 'components/Card'
 
 import styles from 'pages/Home/Home.module.scss'
 
@@ -18,7 +18,7 @@ const Home = props => {
           {sneakers.map(item => {
             const { id, title, price, selected, liked } = item
             return (
-              <Product
+              <Card
                 id={id}
                 title={title}
                 price={price}

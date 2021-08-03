@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
 
-import api from 'api/contacts'
+import api from 'api/axios_instance'
 
 import Home from 'pages/Home'
 import Bookmarks from 'pages/Bookmarks'
@@ -13,6 +13,7 @@ export default () => {
   const [isLoading, setIsLoading] = React.useState(true)
   const [cartItems, setCartItems] = React.useState([])
 
+  // really?
   React.useEffect(
     () => setCartItems(sneakers.filter(item => item.selected)),
     [sneakers]
@@ -62,6 +63,7 @@ export default () => {
       <Route path="/bookmarks" exact>
         <Bookmarks allItems={sneakers} unmarkItem={updateChoice} />
       </Route>
+      {/* TODO Route path="/orders" */}
     </React.Fragment>
   )
 }

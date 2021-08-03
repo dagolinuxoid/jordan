@@ -1,7 +1,7 @@
-// .products {
-//   list-style: none;
-//   padding: 0;
-//   display: flex;
-//   flex-wrap: wrap;
-//   justify-content: space-evenly;
-// }
+.products {
+  padding: 0 2em;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  list-style: none;
+  gap: 2em;
+}
