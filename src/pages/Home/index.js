@@ -12,16 +12,18 @@ const Home = props => {
       <h1>Home Page</h1>
       <p>All Sneakers</p>
       {isLoading ? (
-        'Loading...'
+        'LOADING...'
       ) : (
         <ul className={s.products}>
           {sneakers.map(item => {
-            const { id, title, price, selected, liked } = item
+            const { id, title, price, selected, liked, path } = item
             return (
               <Card
+                key={id}
                 id={id}
                 title={title}
                 price={price}
+                path={path}
                 selected={selected}
                 liked={liked}
                 updateChoice={updateChoice}
