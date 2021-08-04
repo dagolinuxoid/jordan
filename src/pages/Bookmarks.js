@@ -8,7 +8,7 @@ const Bookmarks = props => {
       <ul>
         {likedItems.map(e => {
           return (
-            <li>
+            <li key={e.id}>
               {e.title}{' '}
               <input
                 type="checkbox"

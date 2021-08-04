@@ -12,8 +12,31 @@ const Card = ({ title, price, id, selected, liked, path, updateChoice }) => {
           <div>${price}</div>
         </div>
         <div className={s.actions}>
-          <Button>{selected ? 'remove from cart' : 'Add to cart'}</Button>
-          <Button>{liked ? 'unlike' : 'like'}</Button>
+          <Button onClick={() => updateChoice(id, 'selected')}>
+            {selected ? 'Remove from cart' : 'Add to cart'}
+          </Button>
+          <div
+            onClick={() => updateChoice(id, 'liked')}
+            style={{
+              cursor: 'pointer',
+              border: '1px solid #ddd',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              borderRadius: '50%',
+              padding: 5,
+            }}
+          >
+            {liked ? (
+              <span className="material-icons" style={{ color: 'orange' }}>
+                favorite
+              </span>
+            ) : (
+              <span className="material-icons" style={{ color: '#666' }}>
+                favorite_border
+              </span>
+            )}
+          </div>
         </div>
       </div>
     </li>
