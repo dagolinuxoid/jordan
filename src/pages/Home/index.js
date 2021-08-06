@@ -1,7 +1,7 @@
 import React from 'react'
 
-// import Cart from 'components/Cart'
 import Card from 'components/Card'
+import CategoryTitle from 'components/CategoryTitle'
 
 import s from 'pages/Home/Home.module.scss'
 
@@ -9,9 +9,7 @@ const Home = props => {
   const { isLoading, sneakers, cartItems, updateChoice, unmarkItem } = props
   return (
     <React.Fragment>
-      <h1 style={{ marginLeft: '3em', fontWeight: 400, color: '#555' }}>
-        All sneakers
-      </h1>
+      <CategoryTitle>All sneakers</CategoryTitle>
       {isLoading ? (
         'LOADING...'
       ) : (
@@ -33,7 +31,6 @@ const Home = props => {
           })}
         </ul>
       )}
-      {/* <Cart items={cartItems} removeSelectionById={unmarkItem} /> */}
     </React.Fragment>
   )
 }

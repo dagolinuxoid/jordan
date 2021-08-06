@@ -1,21 +1,33 @@
 import React from 'react'
 
+import CategoryTitle from 'components/CategoryTitle'
+import Card from 'components/Card'
+
 const Bookmarks = props => {
-  const likedItems = props.allItems.filter(e => e.liked)
+  const likedItems = props.allItems.filter(item => item.liked)
   return (
     <React.Fragment>
-      <h2>My bookmarked snekers</h2>
-      <ul>
-        {likedItems.map(e => {
+      <CategoryTitle>My bookmarked sneakers</CategoryTitle>
+      <ul
+        style={{
+          display: 'flex',
+          gap: '2em',
+          marginBottom: '3em',
+          padding: '2em',
+        }}
+      >
+        {likedItems.map(fav => {
           return (
-            <li key={e.id}>
-              {e.title}{' '}
-              <input
-                type="checkbox"
-                checked={e.liked}
-                onChange={() => props.unmarkItem(e.id, 'liked')}
-              />
-            </li>
+            <Card
+              key={fav.id}
+              title={fav.title}
+              id={fav.id}
+              selected={fav.selected}
+              liked={fav.liked}
+              path={fav.path}
+              price={fav.price}
+              updateChoice={props.updateChoice}
+            />
           )
         })}
       </ul>

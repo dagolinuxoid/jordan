@@ -7,6 +7,7 @@ import Home from 'pages/Home'
 import Bookmarks from 'pages/Bookmarks'
 
 import Header from 'components/Header'
+import Cart from 'components/Cart'
 
 export default () => {
   const [sneakers, setSneakers] = React.useState([])
@@ -61,9 +62,11 @@ export default () => {
         />
       </Route>
       <Route path="/bookmarks" exact>
-        <Bookmarks allItems={sneakers} unmarkItem={updateChoice} />
+        <Bookmarks allItems={sneakers} updateChoice={updateChoice} />
       </Route>
-      {/* TODO Route path="/orders" */}
+      <Route path="/cart">
+        <Cart items={cartItems} removeSelectionById={unmarkItem} />
+      </Route>
     </React.Fragment>
   )
 }

@@ -1,3 +1,4 @@
+import CategoryTitle from 'components/CategoryTitle'
 import React from 'react'
 
 function Cart(props) {
@@ -14,7 +15,7 @@ function Cart(props) {
 
   return (
     <div>
-      <h2>Heading of a caRT element</h2>
+      <CategoryTitle>Cart items</CategoryTitle>
       <ul>
         <ItemsInBag />
       </ul>
