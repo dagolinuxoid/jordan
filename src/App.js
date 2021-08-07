@@ -7,7 +7,7 @@ import Home from 'pages/Home'
 import Bookmarks from 'pages/Bookmarks'
 
 import Header from 'components/Header'
-import Cart from 'components/Cart'
+import Cart from 'pages/Cart'
 
 export default () => {
   const [sneakers, setSneakers] = React.useState([])
