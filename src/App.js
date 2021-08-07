@@ -5,9 +5,9 @@ import api from 'api/axios_instance'
 
 import Home from 'pages/Home'
 import Bookmarks from 'pages/Bookmarks'
+import Cart from 'pages/Cart'
 
 import Header from 'components/Header'
-import Cart from 'pages/Cart'
 
 export default () => {
   const [sneakers, setSneakers] = React.useState([])
