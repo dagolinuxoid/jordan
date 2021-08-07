@@ -8,6 +8,7 @@ import Bookmarks from 'pages/Bookmarks'
 import Cart from 'pages/Cart'
 
 import Header from 'components/Header'
+import Footer from 'components/Footer'
 
 export default () => {
   const [sneakers, setSneakers] = React.useState([])
@@ -50,7 +51,13 @@ export default () => {
   }
 
   return (
-    <React.Fragment>
+    <div
+      style={{
+        display: 'grid',
+        gridTemplateRows: 'auto 1fr auto',
+        height: '100vh',
+      }}
+    >
       <Header />
       <Route path="/" exact>
         <Home
@@ -67,6 +74,7 @@ export default () => {
       <Route path="/cart">
         <Cart items={cartItems} removeSelectionById={unmarkItem} />
       </Route>
-    </React.Fragment>
+      <Footer />
+    </div>
   )
 }
