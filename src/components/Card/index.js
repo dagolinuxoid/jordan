@@ -2,10 +2,12 @@ import Button from 'components/Button'
 
 import s from 'components/Card/Card.module.scss'
 
+const prefix = process.env.REACT_APP_IMG_PATH
+
 const Card = ({ title, price, id, selected, liked, path, updateChoice }) => {
   return (
     <li className={s.card}>
-      <img src={path} alt="Sneakers" className={s.pic} />
+      <img src={prefix + path} alt="Sneakers" className={s.pic} />
       <div className={s.overlay}>
         <div className={s.info}>
           <div>{title}</div>
