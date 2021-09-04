@@ -1,2 +1,5 @@
 # store_sneakers_react
-Created with CodeSandbox
+
+keywoards: react application
+
+name: jordan store
